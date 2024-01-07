@@ -44,6 +44,6 @@ rsa==4.9
 six==1.16.0
 sqlparse==0.4.3
 typing_extensions==4.4.0
-urllib3==1.26.14
+urllib3==1.26.18
 zstandard==0.19.0
 torch==2.0.1
