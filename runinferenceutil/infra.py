@@ -1,29 +1,26 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 import logging
-
 import apache_beam as beam
 import torch
 from apache_beam.ml.inference.base import RunInference, PredictionResult
-from apache_beam.ml.inference.pytorch_inference import PytorchModelHandlerTensor
-from apache_beam.ml.inference.pytorch_inference import make_tensor_model_fn
-from apache_beam.options.pipeline_options import PipelineOptions
-from apache_beam.pvalue import AsDict, AsSingleton, EmptySideInput, AsIter, AsList
-from apache_beam.runners.runner import PipelineResult
-from apache_beam.transforms import window
-from apache_beam.transforms.trigger import AfterProcessingTime, AccumulationMode
-from apache_beam.utils.timestamp import Duration
-from transformers import AutoConfig
 from transformers import AutoModelForSeq2SeqLM
 from transformers import AutoTokenizer
 from datetime import datetime
-import argparse
 
 MAX_RESPONSE_TOKENS = 256
-
 model_name = "google/flan-t5-base"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
