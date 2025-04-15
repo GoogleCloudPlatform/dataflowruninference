@@ -19,7 +19,7 @@ setup(name='runinferencellm',
   py_modules=['runinferenceutil'],
   description='RunInferenceLLM',
   install_requires=[
-    'torch==2.0.1',
+    'torch==2.6.0',
     'transformers==4.33.2',
     'google-cloud-translate==3.12.0'
   ],
