@@ -20,7 +20,7 @@ setup(name='runinferencellm',
   description='RunInferenceLLM',
   install_requires=[
     'torch==2.0.1',
-    'transformers==4.33.2',
+    'transformers==5.0.0rc3',
     'google-cloud-translate==3.12.0'
   ],
   packages = setuptools.find_packages()
